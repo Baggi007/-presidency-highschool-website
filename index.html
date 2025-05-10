@@ -1,5 +1,74 @@
 <html lang="en">
 <head>
+  <!-- 
+Insert this snippet inside your header element where you want the scrolling bar to appear.
+Add the CSS styles to your stylesheet or inside a <style> block in your <head>.
+-->
+
+<style>
+  .scroll-container {
+    width: 100%;
+    height: 60px;
+    background: #ffffffcc; /* translucent white for header */
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #e1e4e8;
+    color: #007bff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    user-select: none;
+    line-height: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .scroll-container::-webkit-scrollbar {
+    height: 12px;
+  }
+  .scroll-container::-webkit-scrollbar-track {
+    background: #e1e4e8;
+    border-radius: 10px;
+  }
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+    border: 3px solid #e1e4e8;
+  }
+  .admission-message {
+    display: inline-block;
+    padding: 0 1rem;
+    white-space: nowrap;
+  }
+  .marquee-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<div class="scroll-container" role="region" aria-label="Admissions announcement horizontal scroll area">
+  <div class="marquee-wrapper" aria-hidden="true">
+    <span class="admission-message">Admission are open for class nursery to 10th</span>
+    <span class="admission-message">Admissions are open for classes Nursery to 10th.</span>
+    <span class="admission-message">Admission are open for class nursery to 10th</span>
+    <span class="admission-message">Admissions are open for classes Nursery to 10th.</span>
+  </div>
+</div>
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Presidency High School</title>
